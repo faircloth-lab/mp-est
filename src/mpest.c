@@ -106,7 +106,7 @@ int main (int argc, char *argv[])
 	seed = atoi(argv[2]);	
 	printf("The argument supplied is %ld\n", seed);
 	fscanf(fin,"%s%d%d%d", genetreefile, &distance, &ngene, &(sptree.ntaxa));
-	sprintf(outfile, "%s.tre", argv[3]);
+	sprintf(outfile, "%s", argv[3]);
 	printf("The outfile supplied is %s\n", argv[3]);
 
 	/*the correspondence between species and individual sequences*/
