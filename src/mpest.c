@@ -89,7 +89,7 @@ int main (int argc, char *argv[])
 	FILE *fTree, *fout, *fin;
 	time_t t;
 	struct tm *current;
-	char genetreefile[50], outfile[50];
+	char genetreefile[200], outfile[200];
 
 
 #       if defined (MPI_ENABLED)
@@ -103,8 +103,11 @@ int main (int argc, char *argv[])
 
 	
 	fin = (FILE*)gfopen(argv[1],"r");
-	fscanf(fin,"%s%d%ld%d%d", genetreefile, &distance, &seed, &ngene, &(sptree.ntaxa));
-	sprintf(outfile, "%s.tre", genetreefile);
+	seed = atoi(argv[2]);	
+	printf("The argument supplied is %ld\n", seed);
+	fscanf(fin,"%s%d%d%d", genetreefile, &distance, &ngene, &(sptree.ntaxa));
+	sprintf(outfile, "%s.tre", argv[3]);
+	printf("The outfile supplied is %s\n", argv[3]);
 
 	/*the correspondence between species and individual sequences*/
 	for(i=0; i<sptree.ntaxa; i++)
